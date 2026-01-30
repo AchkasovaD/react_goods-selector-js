@@ -23,14 +23,14 @@ export const App = () => {
 
   const handleGoodClick = good => {
     if (selectedGood === good) {
-      setSelectedGood(null);
+      setSelectedGood('');
     } else {
       setSelectedGood(good);
     }
   };
 
   const handleClear = () => {
-    setSelectedGood(null);
+    setSelectedGood('');
   };
 
   return (
@@ -59,6 +59,7 @@ export const App = () => {
               className={classNames('', {
                 'has-background-success-light': selectedGood === good,
               })}
+              key={good}
             >
               <td>
                 <button
